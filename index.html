@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyber Publicidades - Publicidad para Circos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Oswald', 'Arial', 'Helvetica', sans-serif;
+            font-weight: 600;
+            background-color: rgb(6, 30, 103);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 200, 255, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(0, 200, 255, 0.6); }
+        }
+
+        @keyframes glowPulse {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(0, 200, 255, 0.5), 0 0 40px rgba(0, 200, 255, 0.3);
+                text-shadow: 0 0 10px rgba(0, 200, 255, 0.4);
+            }
+            50% {
+                box-shadow: 0 0 30px rgba(0, 200, 255, 0.7), 0 0 60px rgba(0, 200, 255, 0.5);
+                text-shadow: 0 0 15px rgba(0, 200, 255, 0.6);
+            }
+        }
+
+        @keyframes textGlow {
+            0%, 100% { text-shadow: 0 0 10px rgba(0, 200, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.3); }
+            50% { text-shadow: 0 0 20px rgba(0, 200, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.5); }
+        }
+
+        /* HEADER */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 70px;
+            background: rgb(6, 30, 103);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 40px;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 150, 255, 0.2);
+        }
+
+        .logo img {
+            height: 46px;
+            width: 46px;
+            object-fit: cover;
+            border-radius: 0;
+            border: none;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.8125rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        nav a:hover {
+            color: #00c8ff;
+        }
+
+        .cta-header {
+            background: linear-gradient(135deg, #00c8ff 0%, #0088ff 100%);
+            color: #000;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 0.75rem;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .cta-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 200, 255, 0.3);
+        }
+
+        /* HERO */
+        .hero {
+            margin-top: 70px;
+            aspect-ratio: 3 / 1;
+            position: relative;
+            overflow: hidden;
+            padding: 0;
+            background-image: url('BANNER4.png');
+            background-size: 100% 100%;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .hero-cta-wrap {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            display: flex;
+            justify-content: center;
+            padding: 12px 20px 24px;
+            isolation: isolate;
+            overflow: hidden;
+        }
+
+        .hero-cta {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+            width: min(100%, 340px);
+            min-height: 64px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 14px 28px;
+            border: 1px solid rgba(255, 255, 255, 0.55);
+            border-radius: 16px;
+            background: linear-gradient(180deg, #55edff 0%, #16c7f4 100%);
+            box-shadow: 0 8px 0 #0876db, 0 12px 28px rgba(0, 150, 255, 0.4);
+            color: #06265f;
+            font-size: 1.25rem;
+            font-weight: 900;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            animation: ctaFloat 2.4s ease-in-out infinite;
+        }
+
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            border-radius: inherit;
+            background: linear-gradient(105deg, transparent 20%, rgba(0, 103, 255, 0.18) 38%, rgba(0, 103, 255, 0.52) 50%, rgba(115, 244, 255, 0.56) 56%, rgba(0, 103, 255, 0.18) 68%, transparent 82%);
+            transform: translateX(-110%);
+            animation: ctaBlueSweep 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .hero-cta > span {
+            position: relative;
+            z-index: 1;
+        }
+
+        @keyframes ctaBlueSweep {
+            from { transform: translateX(-110%); }
+            to { transform: translateX(110%); }
+        }
+
+        @keyframes ctaFloat {
+            0%, 100% { translate: 0 0; }
+            50% { translate: 0 -5px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-cta {
+                animation: none;
+                translate: none;
+            }
+
+            .hero-cta::before {
+                animation: none;
+                transform: translateX(0);
+                opacity: 0.35;
+            }
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 0 #0876db, 0 16px 34px rgba(0, 150, 255, 0.55);
+        }
+
+        .hero-cta:focus-visible {
+            outline: 3px solid #ffffff;
+            outline-offset: 4px;
+        }
+
+        .hero-cta-arrow {
+            font-size: 1.8rem;
+            line-height: 1;
+        }
+
+        .promo-strip {
+            padding: 16px 22px 20px;
+            background: rgb(6, 30, 103);
+        }
+
+        .promo-grid {
+            width: min(100%, 1540px);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .promo-card {
+            position: relative;
+            min-height: 138px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 12px;
+            border: 1px solid rgba(123, 220, 255, 0.42);
+            border-radius: 10px;
+            background: linear-gradient(145deg, #16418d, #09265f 72%);
+            box-shadow: 0 10px 26px rgba(0, 8, 35, 0.3), inset 0 1px rgba(255, 255, 255, 0.08);
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .promo-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 18px;
+            right: 18px;
+            height: 2px;
+            border-radius: 0 0 2px 2px;
+            background: linear-gradient(90deg, transparent, #54eaff, transparent);
+            opacity: 0.8;
+        }
+
+        .promo-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(110, 230, 255, 0.8);
+            box-shadow: 0 18px 34px rgba(0, 8, 35, 0.4), 0 0 22px rgba(0, 190, 255, 0.16);
+        }
+
+        .promo-card-media {
+            width: 92px;
+            height: 104px;
+            flex: 0 0 92px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #ffffff;
+            box-shadow: 0 5px 16px rgba(0, 8, 35, 0.24);
+        }
+
+        .promo-card-media img {
+            transition: transform 0.3s ease;
+        }
+
+        .promo-card:hover .promo-card-media img {
+            transform: scale(1.05);
+        }
+
+        .promo-card-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .promo-card:nth-child(2) .promo-card-media {
+            background: rgba(4, 20, 64, 0.7);
+        }
+
+        .promo-card:nth-child(2) .promo-card-image {
+            width: 96%;
+            height: auto;
+            max-height: 100%;
+        }
+
+        .promo-card-copy {
+            min-width: 0;
+            color: #ffffff;
+        }
+
+        .promo-card h2 {
+            margin-bottom: 5px;
+            color: #ffffff;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.08rem;
+            font-weight: 800;
+            line-height: 1.16;
+            text-transform: uppercase;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.65);
+            overflow-wrap: break-word;
+        }
+
+        .promo-card p {
+            color: rgba(255, 255, 255, 0.88);
+            font-size: 0.82rem;
+            font-weight: 500;
+            line-height: 1.35;
+        }
+
+        .ganamos-spotlight {
+            min-height: 430px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 42px 24px;
+            overflow: hidden;
+            text-align: center;
+            background-image: linear-gradient(135deg, rgba(5, 16, 48, 0.9), rgba(7, 25, 69, 0.86)), url('ganamos2.jpg');
+            background-size: cover;
+            background-position: center 42%;
+        }
+
+        .ganamos-spotlight-content {
+            width: min(100%, 940px);
+            margin: 0 auto;
+        }
+
+        .ganamos-spotlight-logo {
+            display: block;
+            width: min(280px, 68vw);
+            height: 112px;
+            margin: 0 auto 10px;
+            object-fit: contain;
+            filter: drop-shadow(0 8px 22px rgba(0, 174, 255, 0.42));
+            animation: ganamosLogoMotion 3.2s ease-in-out infinite;
+        }
+
+        @keyframes ganamosLogoMotion {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.06); }
+        }
+
+        .ganamos-spotlight h2 {
+            margin: 4px 0 14px;
+            color: #74e9ff;
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2rem, 3.4vw, 3.3rem);
+            font-weight: 800;
+            line-height: 1.1;
+            text-shadow: 0 0 22px rgba(0, 196, 255, 0.38);
+        }
+
+        .ganamos-spotlight p {
+            max-width: 780px;
+            margin: 0 auto 28px;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 1.05rem;
+            line-height: 1.55;
+        }
+
+        .ganamos-spotlight-cta {
+            min-width: 300px;
+            min-height: 60px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 30px;
+            border: 1px solid rgba(101, 235, 255, 0.7);
+            border-radius: 6px;
+            background: linear-gradient(100deg, #00c8f4, #078eff);
+            box-shadow: 0 0 28px rgba(0, 181, 255, 0.42);
+            color: #041a3d;
+            font-size: 1rem;
+            font-weight: 900;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .ganamos-spotlight-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 38px rgba(0, 205, 255, 0.62);
+        }
+
+        .ganamos-spotlight-cta:focus-visible {
+            outline: 3px solid #ffffff;
+            outline-offset: 4px;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .ganamos-spotlight-logo {
+                animation: none;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .hero {
+                aspect-ratio: 3.3 / 1;
+                background-size: cover;
+            }
+        }
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            margin-top: -10px;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        .hero-logo {
+            height: 90px;
+            width: auto;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.8s ease;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+        }
+
+        .platform-badge {
+            display: none;
+        }
+
+        .badge-logo {
+            height: 40px;
+            width: auto;
+            flex-shrink: 0;
+        }
+
+        .badge-text {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .platform-badge strong {
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #f3e8ff;
+            font-family: 'Oswald', sans-serif;
+            text-shadow: -0.5px -0.5px 0 rgba(255, 255, 255, 0.2), 0.5px 0.5px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .platform-badge span {
+            font-size: 0.625rem;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            color: #d8b4ff;
+            font-weight: 700;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.2rem, 5vw, 7rem);
+            font-weight: 900;
+            line-height: 0.96;
+            margin-bottom: 25px;
+            color: #ffffff;
+            text-transform: uppercase;
+            letter-spacing: -3px;
+            font-family: 'Oswald', sans-serif;
+            text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.3), 1px 1px 0 rgba(0, 0, 0, 0.5), 0 0 8px rgba(255, 215, 0, 0.2);
+        }
+
+        .hero h1 span {
+            color: #ffd700;
+            text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.4), 1px 1px 0 rgba(0, 0, 0, 0.5), 0 0 6px rgba(255, 215, 0, 0.15);
+        }
+
+        .hero .subtitle {
+            font-size: 1.125rem;
+            color: #b0b0b0;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 15px 40px;
+            font-size: 0.9375rem;
+            font-weight: 700;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #00c8ff 0%, #0088ff 100%);
+            color: #000;
+            animation: fadeInUp 0.8s ease 0.1s both, glowPulse 2s ease-in-out infinite;
+            box-shadow: 0 0 20px rgba(0, 200, 255, 0.5), 0 0 40px rgba(0, 200, 255, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 30px rgba(0, 200, 255, 0.8), 0 0 50px rgba(0, 200, 255, 0.5), 0 20px 40px rgba(0, 200, 255, 0.4);
+            text-shadow: 0 0 10px rgba(0, 200, 255, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #00c8ff;
+            border: 2px solid #00c8ff;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 200, 255, 0.1);
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 80px 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 15px;
+            font-family: 'Oswald', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #00c8ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            filter: drop-shadow(-1px -1px 0 rgba(255, 255, 255, 0.2)) drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.3));
+        }
+
+        .section-subtitle {
+            font-size: 1rem;
+            text-align: center;
+            color: #b0b0b0;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section-container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* FEATURES */
+        .pilar-1 {
+            position: relative;
+            overflow: hidden;
+            border-top: 1px solid rgba(0, 200, 255, 0.3);
+        }
+
+        .pilar-1-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .pilar-1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgb(6, 30, 103);
+            z-index: 1;
+        }
+
+        .pilar-1 .section-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(260px, 1fr));
+            gap: 20px 22px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: rgba(0, 150, 255, 0.08);
+            border: 1px solid rgba(0, 200, 255, 0.38);
+            padding: 28px 22px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            text-align: center;
+            animation: fadeInUp 0.6s ease forwards;
+            min-height: 210px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .feature-card:nth-child(1) { animation-delay: 0.1s; }
+        .feature-card:nth-child(2) { animation-delay: 0.2s; }
+        .feature-card:nth-child(3) { animation-delay: 0.3s; }
+        .feature-card:nth-child(4) { animation-delay: 0.4s; }
+        .feature-card:nth-child(5) { animation-delay: 0.5s; }
+        .feature-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #00c8ff;
+        }
+
+        .feature-icon svg {
+            width: 100%;
+            height: 100%;
+            stroke: #00c8ff;
+        }
+
+        .feature-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            color: #00c8ff;
+            font-weight: 900;
+            text-transform: uppercase;
+            line-height: 1.25;
+            font-family: 'Oswald', sans-serif;
+            text-shadow: -0.5px -0.5px 0 rgba(255, 255, 255, 0.15), 0.5px 0.5px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card p {
+            font-size: 0.96rem;
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+
+        .feature-card:hover {
+            background: rgba(0, 200, 255, 0.15);
+            border-color: rgba(0, 200, 255, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 200, 255, 0.2);
+        }
+
+        .feature-card.highlight {
+            border-color: rgba(0, 200, 255, 0.7);
+            background: linear-gradient(135deg, rgba(0, 200, 255, 0.15) 0%, rgba(0, 150, 255, 0.08) 100%);
+            box-shadow: 0 0 30px rgba(0, 200, 255, 0.18);
+            grid-column: span 1;
+            padding: 42px 30px;
+            min-height: 220px;
+        }
+
+        .feature-card.highlight h3 {
+            font-size: 1.7rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #00c8ff;
+            margin-bottom: 15px;
+            font-family: 'Oswald', sans-serif;
+            text-shadow: -1px -1px 0 rgba(255, 255, 255, 0.2), 1px 1px 0 rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-card.highlight p {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .feature-card.highlight:hover {
+            box-shadow: 0 0 40px rgba(0, 200, 255, 0.28);
+            transform: translateY(-4px);
+        }
+
+        .section-logo {
+            height: 60px;
+            width: auto;
+            margin: 0 auto 25px;
+            display: block;
+            filter: drop-shadow(0 0 15px rgba(0, 200, 255, 0.3));
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        /* BENEFITS */
+        .beneficios {
+            background-image: linear-gradient(135deg, rgba(5, 21, 64, 0.92), rgba(10, 38, 71, 0.88));
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            border-top: 1px solid rgba(0, 200, 255, 0.3);
+        }
+
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .benefit-item {
+            background: rgba(0, 150, 255, 0.1);
+            border: 1px solid rgba(0, 200, 255, 0.25);
+            padding: 30px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .benefit-item:nth-child(1) { animation-delay: 0.1s; }
+        .benefit-item:nth-child(2) { animation-delay: 0.2s; }
+        .benefit-item:nth-child(3) { animation-delay: 0.3s; }
+
+        .benefit-item:hover {
+            background: rgba(0, 200, 255, 0.18);
+            border-color: rgba(0, 200, 255, 0.5);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 200, 255, 0.2);
+        }
+
+        .benefit-item h3 {
+            font-size: 1.125rem;
+            color: #00c8ff;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            font-family: 'Oswald', sans-serif;
+            text-shadow: -0.5px -0.5px 0 rgba(255, 255, 255, 0.15), 0.5px 0.5px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .benefit-item svg {
+            width: 20px;
+            height: 20px;
+            stroke: #00c8ff;
+        }
+
+        .benefit-item p {
+            font-size: 0.875rem;
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+
+        /* CTA FINAL */
+        .final-cta {
+            background-image: linear-gradient(135deg, rgba(5, 18, 51, 0.93), rgba(10, 30, 61, 0.89));
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            border-top: 2px solid rgba(0, 200, 255, 0.4);
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            font-size: 2.625rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            font-family: 'Oswald', sans-serif;
+            background: linear-gradient(135deg, #ffffff 0%, #00c8ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 0.8s ease;
+            filter: drop-shadow(-1px -1px 0 rgba(255, 255, 255, 0.2)) drop-shadow(1px 1px 0 rgba(0, 0, 0, 0.3));
+        }
+
+        .final-cta .subtitle {
+            font-size: 1rem;
+            color: #b0b0b0;
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+
+        .final-cta button {
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        /* FOOTER */
+        footer {
+            background: rgb(6, 30, 103);
+            border-top: 1px solid rgba(0, 200, 255, 0.2);
+            padding: 40px;
+            text-align: center;
+            color: #8899bb;
+            font-size: 0.8125rem;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            header {
+                padding: 0 20px;
+                height: 60px;
+            }
+
+            .logo img {
+                height: 40px;
+                width: 40px;
+            }
+
+            nav {
+                gap: 15px;
+            }
+
+            .hero {
+                margin-top: 60px;
+                padding: 40px 20px;
+            }
+
+            .promo-strip {
+                padding: 22px 20px 30px;
+            }
+
+            .promo-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .promo-card {
+                min-height: 168px;
+                padding: 14px;
+                gap: 15px;
+            }
+
+            .promo-card-media {
+                width: 96px;
+                height: 112px;
+                flex-basis: 96px;
+            }
+
+            .promo-card h2 {
+                font-size: 1.1rem;
+            }
+
+            .promo-card p {
+                font-size: 0.85rem;
+            }
+
+            .ganamos-spotlight {
+                min-height: 380px;
+                padding: 36px 20px;
+            }
+
+            .ganamos-spotlight-logo {
+                height: 90px;
+                margin-bottom: 12px;
+            }
+
+            .ganamos-spotlight p {
+                margin-bottom: 22px;
+                font-size: 0.95rem;
+            }
+
+            .ganamos-spotlight-cta {
+                min-width: min(300px, 100%);
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 0.9375rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                padding: 12px 30px;
+                font-size: 0.8125rem;
+            }
+
+            section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+            }
+
+            .features-grid, .benefits-list {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .feature-card, .benefit-item {
+                padding: 20px;
+            }
+
+            .final-cta h2 {
+                font-size: 1.75rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero-cta-wrap {
+                padding: 8px 14px 14px;
+            }
+
+            .hero-cta {
+                width: min(260px, calc(100vw - 32px));
+                min-height: 50px;
+                padding: 10px 20px;
+                border-radius: 12px;
+                font-size: 0.95rem;
+                box-shadow: 0 5px 0 #0876db, 0 8px 18px rgba(0, 150, 255, 0.4);
+            }
+
+            .hero-cta-arrow {
+                font-size: 1.4rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
+            }
+
+            .final-cta h2 {
+                font-size: 1.375rem;
+            }
+        }
+
+        @media (max-width: 360px) {
+            .promo-card {
+                gap: 10px;
+                padding: 10px;
+            }
+
+            .promo-card-media {
+                width: 72px;
+                height: 88px;
+                flex-basis: 72px;
+            }
+
+            .promo-card h2 {
+                font-size: 1rem;
+                margin-bottom: 5px;
+            }
+
+            .promo-card p {
+                font-size: 0.8rem;
+                line-height: 1.4;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo"><img src="logo.jpeg" alt="Cyber Publicidades"></div>
+        <nav>
+            <a href="#promos">Publicidad</a>
+            <button class="cta-header" onclick="window.open('https://wa.me/5492235524409?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20publicidad%20para%20mi%20circo', '_blank')">Contactar</button>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" aria-label="Banner de publicidad para circo">
+        <div class="hero-cta-wrap">
+            <a class="hero-cta" href="https://wa.me/5492236049325?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20publicidad%20para%20mi%20circo" target="_blank" rel="noopener noreferrer">
+                <span>ESCRIBINOS AHORA</span>
+                <span class="hero-cta-arrow" aria-hidden="true">→</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- PROMO TILES -->
+    <section class="promo-strip" id="promos" aria-label="Servicios de publicidad para circos">
+        <div class="promo-grid">
+            <article class="promo-card">
+                <div class="promo-card-media">
+                    <img class="promo-card-image" src="cua1.avif" alt="Ícono de Chat Interno">
+                </div>
+                <div class="promo-card-copy">
+                    <h2>Chat Interno</h2>
+                    <p>Comunicación directa con tus jugadores en la plataforma. Mensajes instantáneos y disponible 24/7.</p>
+                </div>
+            </article>
+            <article class="promo-card">
+                <div class="promo-card-media">
+                    <img class="promo-card-image" src="cua2.png" alt="Ganamos.net">
+                </div>
+                <div class="promo-card-copy">
+                    <h2>La Plataforma GANAMOS te Espera</h2>
+                    <p>¿Se te caen tus principales? Ganamos retiene jugadores con automatización inteligente 24/7.</p>
+                </div>
+            </article>
+            <article class="promo-card">
+                <div class="promo-card-media">
+                    <img class="promo-card-image" src="cua3.jfif" alt="Ilustración de pagos digitales">
+                </div>
+                <div class="promo-card-copy">
+                    <h2>Pasarela de Pagos Propia</h2>
+                    <p>Transacciones seguras, rápidas y sin terceros. Vos controlás el flujo de dinero de punta a punta.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- GANAMOS SPOTLIGHT -->
+    <section class="ganamos-spotlight" aria-labelledby="ganamos-spotlight-title">
+        <div class="ganamos-spotlight-content">
+            <img class="ganamos-spotlight-logo" src="cua2.png" alt="Ganamos.net">
+            <h2 id="ganamos-spotlight-title">La Plataforma GANAMOS te Espera</h2>
+            <p>¿Se te caen tus principales? Ganamos retiene jugadores con automatización inteligente 24/7.</p>
+            <a class="ganamos-spotlight-cta" href="https://wa.me/5492236049325?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20GANAMOS" target="_blank" rel="noopener noreferrer">Activar GANAMOS Hoy</a>
+        </div>
+    </section>
+
+    <!-- PUBLICIDAD PARA CIRCOS -->
+    <section class="pilar-1" id="features">
+        <div class="section-container">
+            <h2 class="section-title">Todo para llenar la carpa</h2>
+            <p class="section-subtitle">Ideas y difusión para que más público descubra tu espectáculo.</p>
+
+            <div class="features-grid">
+                <article class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 11 18-5v12L3 13v-2Z"></path><path d="M11.6 16.8 13 21l4-1.2-2.3-4.7"></path><path d="M3 11v2a2 2 0 0 0 2 2h1"></path></svg></div>
+                    <h3>CAMPAÑAS PARA FUNCIONES</h3>
+                    <p>Anunciá fechas, horarios y lugares para que nadie se pierda el show.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M16 3v4M8 3v4M3 11h18"></path><path d="m9 16 2 2 4-4"></path></svg></div>
+                    <h3>DIFUSIÓN DE TEMPORADAS</h3>
+                    <p>Mantené tu circo presente durante toda la temporada.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path><circle cx="12" cy="10" r="2.5"></circle></svg></div>
+                    <h3>ALCANCE LOCAL</h3>
+                    <p>Acercá tus funciones a las familias y comunidades de cada ciudad.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 1.9 5.8L20 11l-6.1 2.2L12 19l-1.9-5.8L4 11l6.1-2.2L12 3Z"></path><path d="m19 14 1.2 2.8L23 18l-2.8 1.2L19 22l-1.2-2.8L15 18l2.8-1.2L19 14Z"></path></svg></div>
+                    <h3>PIEZAS QUE DESLUMBRAN</h3>
+                    <p>Creatividades que transmiten la energía y la magia de tu espectáculo.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"></path><path d="m7 14 4-4 4 3 6-7"></path><path d="M16 6h5v5"></path></svg></div>
+                    <h3>CAMPAÑAS CON SEGUIMIENTO</h3>
+                    <p>Revisá el alcance de tus anuncios y cómo responde el público.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5Z"></path></svg></div>
+                    <h3>CHAT INTERNO</h3>
+                    <p>Un espacio directo para mantener a tu equipo en contacto.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final-cta">
+        <div class="section-container">
+            <h2>Tu próxima función empieza con una buena campaña</h2>
+            <p class="subtitle">Publicidad para circos. Sin vueltas.</p>
+            <button class="btn-primary" onclick="window.open('https://wa.me/5492235524409?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20publicidad%20para%20mi%20circo', '_blank')" style="font-size: 1rem; padding: 15px 45px;">Contactar</button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Cyber Publicidades | Publicidad para circos</p>
+    </footer>
+
+</body>
+</html>
