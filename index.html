@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Publicidades - Publicidad para Circos</title>
+    <title>Cyber Publicidades - Publicidad para Plataformas</title>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -305,6 +305,13 @@
             background: rgba(4, 20, 64, 0.7);
         }
 
+        .promo-card-media svg {
+            width: 48px;
+            height: 48px;
+            color: #00c8ff;
+            stroke: currentColor;
+        }
+
         .promo-card:nth-child(2) .promo-card-image {
             width: 96%;
             height: auto;
@@ -428,23 +435,14 @@
             }
         }
 
-        .hero-video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: 0;
-        }
-
-        .hero-content {
-            max-width: 1200px;
-            text-align: center;
-            position: relative;
-            z-index: 2;
-            margin-top: -10px;
-            animation: fadeInUp 0.8s ease;
+        .hero-content p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.5;
+            text-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
         }
 
         .hero-logo {
@@ -956,9 +954,9 @@
             }
 
             .hero {
+                aspect-ratio: auto;
                 display: flex;
                 flex-direction: column;
-                aspect-ratio: auto;
                 padding: 0;
                 background-image: none;
             }
@@ -1032,40 +1030,40 @@
     <header>
         <div class="logo"><img src="logo.jpeg" alt="Cyber Publicidades"></div>
         <nav>
-            <a href="#promos">Publicidad</a>
-            <button class="cta-header" onclick="window.open('https://wa.me/5492235524409?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20publicidad%20para%20mi%20circo', '_blank')">Contactar</button>
+            <a href="#promos">Servicios</a>
+            <button class="cta-header" onclick="window.open('https://wa.me/5492236049325?text=Hola%2C%20quiero%20consultar%20por%20publicidad%20para%20mi%20plataforma', '_blank')">Contactar</button>
         </nav>
     </header>
 
     <!-- HERO -->
-    <section class="hero" aria-label="Banner de publicidad para circo">
+    <section class="hero" aria-label="Banner promocional">
         <div class="hero-cta-wrap">
-            <a class="hero-cta" href="https://wa.me/5492236049325?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20publicidad%20para%20mi%20circo" target="_blank" rel="noopener noreferrer">
-                <span>ESCRIBINOS AHORA</span>
+            <a class="hero-cta" href="https://wa.me/5492236049325?text=Hola%2C%20quiero%20consultar%20por%20publicidad%20para%20mi%20plataforma" target="_blank" rel="noopener noreferrer">
+                <span>ESCRIBINOS</span>
                 <span class="hero-cta-arrow" aria-hidden="true">→</span>
             </a>
         </div>
     </section>
 
     <!-- PROMO TILES -->
-    <section class="promo-strip" id="promos" aria-label="Servicios de publicidad para circos">
+    <section class="promo-strip" id="promos" aria-label="Servicios de publicidad para plataformas">
         <div class="promo-grid">
             <article class="promo-card">
                 <div class="promo-card-media">
                     <img class="promo-card-image" src="cua1.avif" alt="Ícono de Chat Interno">
                 </div>
                 <div class="promo-card-copy">
-                    <h2>Chat Interno</h2>
-                    <p>Comunicación directa con tus jugadores en la plataforma. Mensajes instantáneos y disponible 24/7.</p>
+                    <h2>Comunicación directa</h2>
+                    <p>Canales de contacto para mantener cerca a tu comunidad y responder a tiempo.</p>
                 </div>
             </article>
             <article class="promo-card">
                 <div class="promo-card-media">
-                    <img class="promo-card-image" src="cua2.png" alt="Ganamos.net">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 4h18v13H3z"></path><path d="M8 21h8M12 17v4M7 9h4M7 13h10"></path><path d="m16 8 1 1 2-2"></path></svg>
                 </div>
                 <div class="promo-card-copy">
-                    <h2>La Plataforma GANAMOS te Espera</h2>
-                    <p>¿Se te caen tus principales? Ganamos retiene jugadores con automatización inteligente 24/7.</p>
+                    <h2>Publicidad a tu medida</h2>
+                    <p>Campañas adaptadas a la identidad, los objetivos y el público de tu plataforma.</p>
                 </div>
             </article>
             <article class="promo-card">
@@ -1073,8 +1071,8 @@
                     <img class="promo-card-image" src="cua3.jfif" alt="Ilustración de pagos digitales">
                 </div>
                 <div class="promo-card-copy">
-                    <h2>Pasarela de Pagos Propia</h2>
-                    <p>Transacciones seguras, rápidas y sin terceros. Vos controlás el flujo de dinero de punta a punta.</p>
+                    <h2>Más alcance para tu marca</h2>
+                    <p>Una estrategia de difusión pensada para que más personas descubran tu propuesta.</p>
                 </div>
             </article>
         </div>
@@ -1084,48 +1082,48 @@
     <section class="ganamos-spotlight" aria-labelledby="ganamos-spotlight-title">
         <div class="ganamos-spotlight-content">
             <img class="ganamos-spotlight-logo" src="cua2.png" alt="Ganamos.net">
-            <h2 id="ganamos-spotlight-title">La Plataforma GANAMOS te Espera</h2>
-            <p>¿Se te caen tus principales? Ganamos retiene jugadores con automatización inteligente 24/7.</p>
-            <a class="ganamos-spotlight-cta" href="https://wa.me/5492236049325?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20GANAMOS" target="_blank" rel="noopener noreferrer">Activar GANAMOS Hoy</a>
+            <h2 id="ganamos-spotlight-title">¿Buscás una plataforma?</h2>
+            <p>Además de publicidad para plataformas propias, podemos sumarte a Ganamos como una opción adicional.</p>
+            <a class="ganamos-spotlight-cta" href="https://wa.me/5492236049325?text=Hola%2C%20quiero%20consultar%20como%20sumarme%20a%20Ganamos" target="_blank" rel="noopener noreferrer">Consultar por Ganamos</a>
         </div>
     </section>
 
-    <!-- PUBLICIDAD PARA CIRCOS -->
+    <!-- SERVICIOS PARA PLATAFORMAS -->
     <section class="pilar-1" id="features">
         <div class="section-container">
-            <h2 class="section-title">Funciones de la plataforma</h2>
-            <p class="section-subtitle">Comunicación, publicidad, pagos y control en un mismo lugar.</p>
+            <h2 class="section-title">Publicidad que se adapta a tu plataforma</h2>
+            <p class="section-subtitle">Trabajamos con tu marca, tus canales y tus objetivos. No necesitás usar una plataforma específica.</p>
 
             <div class="features-grid">
                 <article class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 11 18-5v12L3 13v-2Z"></path><path d="M11.6 16.8 13 21l4-1.2-2.3-4.7"></path><path d="M3 11v2a2 2 0 0 0 2 2h1"></path></svg></div>
+                    <h3>CAMPAÑAS PUBLICITARIAS</h3>
+                    <p>Planificamos y difundimos campañas según tu plataforma y tus metas.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 15h.01M12 15h.01M17 15h.01M7 9h10"></path></svg></div>
+                    <h3>CONTENIDO CREATIVO</h3>
+                    <p>Piezas y mensajes alineados con la identidad de tu marca.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4M8 11h6M11 8v6"></path></svg></div>
+                    <h3>ALCANCE DE AUDIENCIAS</h3>
+                    <p>Orientamos la difusión hacia el público que querés alcanzar.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"></path><path d="m7 14 4-4 4 3 6-7"></path><path d="M16 6h5v5"></path></svg></div>
+                    <h3>SEGUIMIENTO DE RESULTADOS</h3>
+                    <p>Revisamos el desempeño de las campañas y ajustamos la estrategia.</p>
+                </article>
+                <article class="feature-card">
                     <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
-                    <h3>CHAT INTERNO</h3>
-                    <p>Comunicación directa con tus jugadores en la plataforma. Mensajes instantáneos y disponible 24/7.</p>
+                    <h3>COMUNICACIÓN DIRECTA</h3>
+                    <p>Coordinamos con vos para mantener cada acción alineada con tu equipo.</p>
                 </article>
                 <article class="feature-card">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l16 16M4 20 20 4"></path></svg></div>
-                    <h3>PUBLICIDAD <span style="color: #ffd700;">DIRECTO A LA PLATAFORMA</span></h3>
-                    <p>No necesitas líneas apis, whatsapp ni listas de difusión, el usuario se registra en la misma plataforma, carga y retira sin necesidad de nada externo</p>
-                </article>
-                <article class="feature-card">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2"></rect><path d="M1 10h22"></path></svg></div>
-                    <h3>DEPÓSITOS Y RETIROS <span style="color: #ffd700;">100% AUTOMÁTICOS</span></h3>
-                    <p>Más escalabilidad, menos trabajo manual. El jugador carga y retira solo a cualquier hora que quiera.</p>
-                </article>
-                <article class="feature-card">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7Z"></path></svg></div>
-                    <h3>PASARELA DE PAGOS <span style="color: #ffd700;">PROPIA</span></h3>
-                    <p>Transacciones seguras, rápidas y sin terceros. Vos controlás el flujo de dinero de punta a punta.</p>
-                </article>
-                <article class="feature-card">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"></path><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
-                    <h3>MÉTRICAS Y CONTROL <span style="color: #ffd700;">DE TU NEGOCIO</span></h3>
-                    <p>Datos en tiempo real de usuarios, movimientos e ingresos para tomar mejores decisiones.</p>
-                </article>
-                <article class="feature-card">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path></svg></div>
-                    <h3>SEGURIDAD <span style="color: #ffd700;">ANTIFRAUDE</span></h3>
-                    <p>Protección avanzada contra fraudes y duplicación de cuentas. Tu dinero siempre seguro.</p>
+                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-4"></path></svg></div>
+                    <h3>ESTRATEGIA A TU MEDIDA</h3>
+                    <p>Una propuesta flexible, pensada para la etapa y necesidades de tu proyecto.</p>
                 </article>
             </div>
         </div>
@@ -1134,15 +1132,15 @@
     <!-- CTA FINAL -->
     <section class="final-cta">
         <div class="section-container">
-            <h2>Tu próxima función empieza con una buena campaña</h2>
-            <p class="subtitle">Publicidad para circos. Sin vueltas.</p>
-            <button class="btn-primary" onclick="window.open('https://wa.me/5492235524409?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20publicidad%20para%20mi%20circo', '_blank')" style="font-size: 1rem; padding: 15px 45px;">Contactar</button>
+            <h2>Hagamos crecer tu plataforma</h2>
+            <p class="subtitle">Contanos qué necesitás y armamos una propuesta para tu marca.</p>
+            <button class="btn-primary" onclick="window.open('https://wa.me/5492236049325?text=Hola%2C%20quiero%20una%20propuesta%20de%20publicidad%20para%20mi%20plataforma', '_blank')" style="font-size: 1rem; padding: 15px 45px;">Hablemos</button>
         </div>
     </section>
 
     <!-- FOOTER -->
     <footer>
-        <p>&copy; 2026 Cyber Publicidades | Publicidad para circos</p>
+        <p>&copy; 2026 Cyber Publicidades | Publicidad para plataformas digitales</p>
     </footer>
 
 </body>
