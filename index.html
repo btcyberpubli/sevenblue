@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cyber Publicidades - Publicidad para Plataformas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <title>Seven Blue Publicidades | Meta Ads para casinos online</title>
+    <meta name="description" content="Estrategia, creatividades y campañas Meta Ads para llevar público a la web de entretenimiento y al chat interno de operadores habilitados.">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -402,7 +403,10 @@
             padding: 14px 30px;
             border: 1px solid rgba(101, 235, 255, 0.7);
             border-radius: 6px;
-            background: linear-gradient(100deg, #00c8f4, #078eff);
+            background-image: linear-gradient(180deg, transparent 46%, rgba(255, 255, 255, 0.58) 50%, rgba(75, 220, 255, 0.28) 53%, transparent 57%), linear-gradient(100deg, #00c8f4, #078eff);
+            background-size: 100% 220%, 100% 100%;
+            background-position: 0 100%, 0 0;
+            background-repeat: no-repeat;
             box-shadow: 0 0 28px rgba(0, 181, 255, 0.42);
             color: #041a3d;
             font-size: 1rem;
@@ -410,6 +414,7 @@
             text-decoration: none;
             text-transform: uppercase;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
+            animation: ctaLightDrop 4.8s ease-in-out infinite;
         }
 
         .ganamos-spotlight-cta:hover {
@@ -961,15 +966,6 @@
                 background-image: none;
             }
 
-            .hero::before {
-                content: '';
-                display: block;
-                width: 100%;
-                aspect-ratio: 941 / 1688;
-                flex: 0 0 auto;
-                background: url('BANNERMOBILE.png') center / 100% 100% no-repeat;
-            }
-
             .hero-cta-wrap {
                 position: absolute;
                 right: 0;
@@ -1023,125 +1019,886 @@
                 line-height: 1.4;
             }
         }
+
+        /* Seven Blue landing */
+        body {
+            background: #f4f7fc;
+            color: #10233e;
+            font-family: 'DM Sans', Arial, sans-serif;
+            font-weight: 400;
+        }
+
+        header.sb-header {
+            height: 74px;
+            padding: 0 max(24px, calc((100vw - 1180px) / 2));
+            background: #071a3b;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .sb-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.96rem;
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .sb-brand img {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .sb-header nav {
+            gap: 24px;
+        }
+
+        .sb-header nav a:not(.sb-button) {
+            color: #d7e2f5;
+            font-family: 'DM Sans', Arial, sans-serif;
+            font-size: 0.88rem;
+            text-decoration: none;
+        }
+
+        .sb-button {
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 21px;
+            border: 0;
+            border-radius: 7px;
+            background-color: #25d366;
+            background-image: linear-gradient(180deg, transparent 46%, rgba(255, 255, 255, 0.62) 50%, rgba(75, 255, 190, 0.3) 53%, transparent 57%), linear-gradient(135deg, transparent, transparent);
+            background-size: 100% 220%, 100% 100%;
+            background-position: 0 100%, 0 0;
+            background-repeat: no-repeat;
+            color: #062b17;
+            font-family: 'DM Sans', Arial, sans-serif;
+            font-size: 0.94rem;
+            font-weight: 800;
+            line-height: 1.25;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            animation: ctaLightDrop 4.8s ease-in-out infinite;
+        }
+
+        .sb-button:hover {
+            background-color: #42e47e;
+            transform: translateY(-2px);
+        }
+
+        .sb-button:focus-visible,
+        .sb-header nav a:focus-visible {
+            outline: 3px solid #80e4ff;
+            outline-offset: 4px;
+        }
+
+        @keyframes ctaLightDrop {
+            0%, 10% { background-position: 0 100%, 0 0; }
+            80%, 100% { background-position: 0 0, 0 0; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .sb-button,
+            .ganamos-spotlight-cta {
+                animation: none;
+                background-position: 0 100%, 0 0;
+            }
+        }
+
+        .sb-cta-short {
+            display: none;
+        }
+
+        .hero.sb-hero {
+            min-height: 620px;
+            margin-top: 74px;
+            padding: 72px 24px;
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            align-items: center;
+            gap: 56px;
+            aspect-ratio: auto;
+            background: #0a2048;
+            background-image: radial-gradient(ellipse at 82% 18%, rgba(35, 89, 191, 0.35), transparent 38%), linear-gradient(115deg, #081a39, #102b5a 72%, #173c77);
+            overflow: hidden;
+        }
+
+        .sb-hero-inner {
+            width: min(100%, 1320px);
+            margin: 0 auto;
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+            align-items: center;
+            gap: 56px;
+        }
+
+        .sb-eyebrow {
+            margin-bottom: 18px;
+            color: #8bdcf6;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 1.3px;
+            text-transform: uppercase;
+        }
+
+        .hero.sb-hero h1 {
+            margin: 0 0 20px;
+            color: #fff;
+            font-family: 'Oswald', 'DM Sans', sans-serif;
+            font-size: clamp(2.65rem, 5vw, 4.6rem);
+            font-weight: 700;
+            line-height: 1.02;
+            letter-spacing: 0;
+            text-shadow: none;
+            text-transform: none;
+        }
+
+        .sb-hero-copy > p {
+            max-width: 610px;
+            margin-bottom: 27px;
+            color: #d5e0f3;
+            font-size: 1.06rem;
+            font-weight: 400;
+            line-height: 1.65;
+        }
+
+        .sb-hero .sb-button {
+            min-height: 56px;
+            padding: 14px 24px;
+            font-size: 1rem;
+            animation: ctaLightDrop 4.8s ease-in-out infinite, ctaBob 2.6s ease-in-out infinite;
+        }
+
+        @keyframes ctaBob {
+            0%, 100% { translate: 0 0; }
+            50% { translate: 0 -4px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .sb-hero .sb-button {
+                animation: none;
+                translate: none;
+            }
+        }
+
+        .sb-compliance-note {
+            max-width: 580px;
+            margin: 17px 0 0;
+            color: #b8c7df;
+            font-size: 0.76rem;
+            line-height: 1.55;
+        }
+
+        .sb-creative {
+            width: 100%;
+            margin: 0;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            filter: drop-shadow(0 26px 46px rgba(0, 0, 0, 0.38));
+        }
+
+        .sb-creative img {
+            display: block;
+            width: auto;
+            max-width: 100%;
+            max-height: min(70svh, 500px);
+            height: auto;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .sb-creative picture {
+            position: relative;
+            max-width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            isolation: isolate;
+        }
+
+        .sb-section {
+            padding: 82px 24px;
+        }
+
+        .sb-container {
+            width: min(100%, 1120px);
+            margin: 0 auto;
+        }
+
+        .sb-section-heading {
+            max-width: 720px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        .sb-section-heading .sb-eyebrow {
+            margin-bottom: 11px;
+            color: #2862ca;
+        }
+
+        .sb-section-heading h2 {
+            margin-bottom: 12px;
+            color: #10233e;
+            font-family: 'Oswald', 'DM Sans', sans-serif;
+            font-size: clamp(2rem, 3.5vw, 2.8rem);
+            font-weight: 600;
+            line-height: 1.12;
+        }
+
+        .sb-section-heading p {
+            color: #53647d;
+            font-size: 1rem;
+            line-height: 1.65;
+        }
+
+        .sb-benefits {
+            background: #f4f7fc;
+        }
+
+        .sb-benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 16px;
+        }
+
+        .sb-benefit {
+            min-height: 220px;
+            padding: 25px 21px;
+            border: 1px solid #dce5f2;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(25, 56, 101, 0.05);
+        }
+
+        .sb-benefit-icon {
+            width: 42px;
+            height: 42px;
+            margin-bottom: 17px;
+            display: grid;
+            place-items: center;
+            border-radius: 9px;
+            background: #e8f1ff;
+            color: #2456b6;
+            font-size: 1.1rem;
+            font-weight: 800;
+        }
+
+        .sb-benefit h3 {
+            margin-bottom: 9px;
+            color: #112746;
+            font-size: 1rem;
+            font-weight: 800;
+            line-height: 1.35;
+        }
+
+        .sb-benefit p {
+            color: #53647d;
+            font-size: 0.88rem;
+            line-height: 1.58;
+        }
+
+        .sb-results {
+            background: #0a2048;
+            color: #fff;
+        }
+
+        .sb-results .sb-section-heading h2 {
+            color: #fff;
+        }
+
+        .sb-results .sb-section-heading p {
+            color: #c4d2e9;
+        }
+
+        .sb-results .sb-section-heading .sb-eyebrow {
+            color: #8bdcf6;
+        }
+
+        .sb-report {
+            padding: 26px;
+            border: 1px solid rgba(190, 215, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.055);
+        }
+
+        .sb-report-title {
+            margin-bottom: 20px;
+            color: #e4ecf8;
+            font-size: 0.83rem;
+            font-weight: 700;
+        }
+
+        .sb-report-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+        }
+
+        .sb-report-metric {
+            padding: 19px;
+            border-radius: 7px;
+            background: #fff;
+            color: #142743;
+        }
+
+        .sb-report-metric strong {
+            display: block;
+            margin-bottom: 8px;
+            color: #2456b6;
+            font-size: 1.05rem;
+        }
+
+        .sb-report-metric span {
+            color: #586980;
+            font-size: 0.82rem;
+            line-height: 1.5;
+        }
+
+        .sb-report-disclaimer {
+            margin: 17px 0 0;
+            color: #bdcce2;
+            font-size: 0.78rem;
+            line-height: 1.55;
+        }
+
+        .sb-process {
+            background: #fff;
+        }
+
+        .sb-steps {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 28px;
+            counter-reset: step;
+        }
+
+        .sb-step {
+            position: relative;
+            padding: 3px 10px 0 62px;
+            counter-increment: step;
+        }
+
+        .sb-step::before {
+            content: counter(step, decimal-leading-zero);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 44px;
+            height: 44px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: #e8f1ff;
+            color: #2456b6;
+            font-size: 0.88rem;
+            font-weight: 800;
+        }
+
+        .sb-step h3 {
+            margin-bottom: 9px;
+            color: #10233e;
+            font-size: 1.05rem;
+            font-weight: 800;
+        }
+
+        .sb-step p {
+            color: #53647d;
+            font-size: 0.9rem;
+            line-height: 1.65;
+        }
+
+        .sb-final-cta {
+            padding: 72px 24px;
+            background: #102b5a;
+            color: #fff;
+            text-align: center;
+        }
+
+        .sb-final-cta h2 {
+            margin-bottom: 12px;
+            color: #fff;
+            font-family: 'Oswald', 'DM Sans', sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            line-height: 1.12;
+        }
+
+        .sb-final-cta p {
+            max-width: 640px;
+            margin: 0 auto 25px;
+            color: #d3def0;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .sb-footer {
+            padding: 24px;
+            background: #071a3b;
+            color: #c3d0e5;
+            text-align: center;
+            font-size: 0.76rem;
+            line-height: 1.65;
+        }
+
+        .sb-footer p + p {
+            margin-top: 5px;
+        }
+
+        @media (min-width: 1500px) {
+            .hero.sb-hero {
+                min-height: calc(100svh - 74px);
+                padding: 28px 0 0 24px;
+                align-items: start;
+            }
+
+            .sb-hero-inner {
+                width: calc(100vw - max(24px, calc((100vw - 1320px) / 2)) - 15px);
+                max-width: none;
+                margin-left: max(0px, calc((100vw - 1320px) / 2 - 24px));
+                margin-right: 0;
+                grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+                align-items: start;
+            }
+
+            .sb-hero-copy {
+                padding-top: 34px;
+            }
+
+            .sb-creative {
+                position: relative;
+                align-self: start;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                overflow: visible;
+                isolation: isolate;
+                clip-path: inset(-12% -24% -22% -24%);
+                padding: 0;
+                border-radius: 10px;
+                filter: none;
+            }
+
+            .sb-creative::before {
+                content: '';
+                position: absolute;
+                inset: 0 -10% -16% -28%;
+                z-index: -1;
+                background-image: linear-gradient(90deg, rgba(3, 15, 35, 0.32), rgba(3, 15, 35, 0.16) 48%, transparent 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.14) 55%, transparent 100%), url('BANN.png');
+                background-position: center;
+                background-size: cover;
+                filter: blur(64px);
+                opacity: 0.72;
+                mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 30%, #000 90%, #000 100%), linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.2) 30%, #000 88%, #000 100%);
+                mask-composite: intersect;
+                transform: scale(1.1);
+            }
+
+            .sb-creative picture {
+                position: relative;
+                z-index: 1;
+                width: 100%;
+                max-width: none;
+                max-height: 84svh;
+                aspect-ratio: 3 / 2;
+                overflow: hidden;
+                border-radius: 10px;
+                margin-left: auto;
+            }
+
+            .sb-creative img {
+                width: 100%;
+                height: 100%;
+                max-height: none;
+                object-fit: contain;
+                object-position: center;
+                border-radius: inherit;
+            }
+
+            .hero.sb-hero h1 {
+                font-size: clamp(2.8rem, 3.2vw, 3.25rem);
+            }
+        }
+
+        @media (min-width: 1500px) and (max-height: 850px) {
+            .hero.sb-hero {
+                padding-bottom: 0;
+            }
+
+            .sb-hero-copy > p {
+                margin-bottom: 18px;
+                font-size: 0.98rem;
+                line-height: 1.5;
+            }
+
+            .sb-hero-copy .sb-compliance-note {
+                margin-top: 11px;
+                font-size: 0.7rem;
+                line-height: 1.4;
+            }
+
+            .sb-hero .sb-button {
+                min-height: 50px;
+                padding: 12px 20px;
+                font-size: 0.94rem;
+            }
+        }
+
+        @media (min-width: 901px) and (max-width: 1499px) and (max-height: 850px) {
+            .hero.sb-hero {
+                min-height: calc(100svh - 74px);
+                padding-top: 24px;
+                padding-bottom: 24px;
+            }
+
+            .sb-hero-copy > p {
+                margin-bottom: 16px;
+                font-size: 0.94rem;
+                line-height: 1.45;
+            }
+
+            .sb-hero-copy .sb-compliance-note {
+                margin-top: 10px;
+                font-size: 0.68rem;
+                line-height: 1.35;
+            }
+
+            .hero.sb-hero h1 {
+                font-size: clamp(2.4rem, 3.2vw, 3.25rem);
+            }
+
+            .sb-hero .sb-button {
+                min-height: 48px;
+                padding: 11px 18px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (min-width: 901px) {
+            .hero.sb-hero {
+                min-height: calc(100svh - 74px);
+                padding: 28px 0 0 24px;
+                align-items: start;
+            }
+
+            .sb-hero-inner {
+                align-items: start;
+            }
+
+            .sb-hero-copy {
+                padding-top: 24px;
+            }
+
+            .sb-creative {
+                position: relative;
+                align-self: start;
+                overflow: visible;
+                isolation: isolate;
+                clip-path: inset(-12% -24% -22% -24%);
+                filter: none;
+                transform: translateY(4%);
+            }
+
+            .sb-creative::before {
+                content: '';
+                position: absolute;
+                inset: 0 -10% -16% -28%;
+                z-index: -1;
+                background-image: linear-gradient(90deg, rgba(3, 15, 35, 0.32), rgba(3, 15, 35, 0.16) 48%, transparent 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.48), rgba(0, 0, 0, 0.14) 55%, transparent 100%), url('BANN.png');
+                background-position: center;
+                background-size: cover;
+                filter: blur(64px);
+                opacity: 0.72;
+                mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.2) 30%, #000 90%, #000 100%), linear-gradient(to top, transparent 0%, rgba(0, 0, 0, 0.2) 30%, #000 88%, #000 100%);
+                mask-composite: intersect;
+                transform: scale(1.1);
+            }
+
+            .sb-creative picture {
+                position: relative;
+                isolation: isolate;
+                width: 100%;
+                max-width: none;
+                max-height: 84svh;
+                aspect-ratio: 3 / 2;
+                overflow: hidden;
+                border-radius: 10px;
+                margin-left: auto;
+                box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.38), 0 14px 48px 12px rgba(0, 0, 0, 0.86), 0 0 82px 28px rgba(0, 0, 0, 0.78);
+            }
+
+            .sb-creative img {
+                width: 100%;
+                height: 100%;
+                max-height: none;
+                object-fit: contain;
+                object-position: center;
+                border-radius: inherit;
+            }
+
+        }
+
+        @media (max-width: 900px) {
+            .sb-benefits-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .sb-hero-inner {
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 700px) {
+            header.sb-header {
+                height: 64px;
+                padding: 0 16px;
+            }
+
+            .sb-brand {
+                gap: 8px;
+                font-size: 0.82rem;
+            }
+
+            .sb-brand img {
+                width: 36px;
+                height: 36px;
+            }
+
+            .sb-header nav {
+                gap: 0;
+            }
+
+            .sb-header nav > a:not(.sb-button) {
+                display: none;
+            }
+
+            .sb-header .sb-button {
+                min-height: 40px;
+                padding: 8px 10px;
+                font-size: 0.72rem;
+                white-space: nowrap;
+            }
+
+            .sb-cta-full {
+                display: none;
+            }
+
+            .sb-cta-short {
+                display: inline;
+            }
+
+            .hero.sb-hero {
+                min-height: 0;
+                margin-top: 64px;
+                padding: 54px 20px 42px;
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .sb-hero-inner {
+                grid-template-columns: 1fr;
+                gap: 34px;
+            }
+
+            .hero.sb-hero h1 {
+                font-size: clamp(2.45rem, 11vw, 3.4rem);
+            }
+
+            .sb-hero-copy > p {
+                font-size: 0.98rem;
+            }
+
+            .sb-creative {
+                max-width: 560px;
+                margin: 0 auto;
+            }
+
+            .sb-creative img {
+                width: 100%;
+                max-height: 72vh;
+                object-fit: contain;
+                object-position: center top;
+            }
+
+            .sb-section {
+                padding: 64px 20px;
+            }
+
+            .sb-benefits-grid,
+            .sb-report-grid,
+            .sb-steps {
+                grid-template-columns: 1fr;
+            }
+
+            .sb-benefit {
+                min-height: 0;
+            }
+
+            .sb-report {
+                padding: 18px;
+            }
+
+            .sb-step {
+                min-height: 55px;
+            }
+
+            .sb-final-cta {
+                padding: 60px 20px;
+            }
+        }
+
+        @media (max-width: 360px) {
+            header.sb-header {
+                padding: 0 12px;
+            }
+
+            .sb-brand {
+                gap: 6px;
+                font-size: 0.68rem;
+            }
+
+            .sb-brand img {
+                width: 30px;
+                height: 30px;
+            }
+
+            .sb-header .sb-button {
+                padding: 7px 8px;
+                font-size: 0.68rem;
+            }
+        }
     </style>
 </head>
-<body>
-    <!-- HEADER -->
-    <header>
-        <div class="logo"><img src="logo.jpeg" alt="Cyber Publicidades"></div>
-        <nav>
-            <a href="#promos">Servicios</a>
-            <button class="cta-header" onclick="window.open('https://wa.me/5492236049325?text=Hola%2C%20quiero%20consultar%20por%20publicidad%20para%20mi%20plataforma', '_blank')">Contactar</button>
+<body id="top">
+    <header class="sb-header">
+        <a class="sb-brand" href="#top" aria-label="Seven Blue Publicidades, inicio">
+            <img src="logo.jpeg" alt="">
+            <span>Seven Blue Publicidades</span>
+        </a>
+        <nav aria-label="Navegación principal">
+            <a href="#resultados">Resultados</a>
+            <a href="#proceso">Cómo funciona</a>
+            <a class="sb-button" href="https://wa.me/5492236049325?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20pautar%20mi%20casino%20online" target="_blank" rel="noopener noreferrer"><span class="sb-cta-full">Hablar con un asesor</span><span class="sb-cta-short">Contactar</span></a>
         </nav>
     </header>
 
-    <!-- HERO -->
-    <section class="hero" aria-label="Banner promocional">
-        <div class="hero-cta-wrap">
-            <a class="hero-cta" href="https://wa.me/5492236049325?text=Hola%2C%20quiero%20consultar%20por%20publicidad%20para%20mi%20plataforma" target="_blank" rel="noopener noreferrer">
-                <span>ESCRIBINOS</span>
-                <span class="hero-cta-arrow" aria-hidden="true">→</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- PROMO TILES -->
-    <section class="promo-strip" id="promos" aria-label="Servicios de publicidad para plataformas">
-        <div class="promo-grid">
-            <article class="promo-card">
-                <div class="promo-card-media">
-                    <img class="promo-card-image" src="cua1.avif" alt="Ícono de Chat Interno">
+    <main>
+        <section class="hero sb-hero" aria-labelledby="hero-title">
+            <div class="sb-hero-inner">
+                <div class="sb-hero-copy">
+                    <p class="sb-eyebrow">Meta Ads para operadores de casinos online</p>
+                    <h1 id="hero-title">Conseguí más jugadores y cargas para tu casino online con Meta Ads.</h1>
+                    <p>Planificamos campañas que llevan público a tu web de entretenimiento, donde puede conocer tu propuesta y contactar a tu equipo por el chat interno de tu plataforma.</p>
+                    <a class="sb-button" href="https://wa.me/5492236049325?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20pautar%20mi%20casino%20online" target="_blank" rel="noopener noreferrer">Quiero promocionar mi plataforma</a>
+                    
                 </div>
-                <div class="promo-card-copy">
-                    <h2>Comunicación directa</h2>
-                    <p>Canales de contacto para mantener cerca a tu comunidad y responder a tiempo.</p>
-                </div>
-            </article>
-            <article class="promo-card">
-                <div class="promo-card-media">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M3 4h18v13H3z"></path><path d="M8 21h8M12 17v4M7 9h4M7 13h10"></path><path d="m16 8 1 1 2-2"></path></svg>
-                </div>
-                <div class="promo-card-copy">
-                    <h2>Publicidad a tu medida</h2>
-                    <p>Campañas adaptadas a la identidad, los objetivos y el público de tu plataforma.</p>
-                </div>
-            </article>
-            <article class="promo-card">
-                <div class="promo-card-media">
-                    <img class="promo-card-image" src="cua3.jfif" alt="Ilustración de pagos digitales">
-                </div>
-                <div class="promo-card-copy">
-                    <h2>Más alcance para tu marca</h2>
-                    <p>Una estrategia de difusión pensada para que más personas descubran tu propuesta.</p>
-                </div>
-            </article>
-        </div>
-    </section>
-
-    <!-- GANAMOS SPOTLIGHT -->
-    <section class="ganamos-spotlight" aria-labelledby="ganamos-spotlight-title">
-        <div class="ganamos-spotlight-content">
-            <img class="ganamos-spotlight-logo" src="cua2.png" alt="Ganamos.net">
-            <h2 id="ganamos-spotlight-title">¿Buscás una plataforma?</h2>
-            <p>Además de publicidad para plataformas propias, podemos sumarte a Ganamos como una opción adicional.</p>
-            <a class="ganamos-spotlight-cta" href="https://wa.me/5492236049325?text=Hola%2C%20quiero%20consultar%20como%20sumarme%20a%20Ganamos" target="_blank" rel="noopener noreferrer">Consultar por Ganamos</a>
-        </div>
-    </section>
-
-    <!-- SERVICIOS PARA PLATAFORMAS -->
-    <section class="pilar-1" id="features">
-        <div class="section-container">
-            <h2 class="section-title">Publicidad que se adapta a tu plataforma</h2>
-            <p class="section-subtitle">Trabajamos con tu marca, tus canales y tus objetivos. No necesitás usar una plataforma específica.</p>
-
-            <div class="features-grid">
-                <article class="feature-card">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 11 18-5v12L3 13v-2Z"></path><path d="M11.6 16.8 13 21l4-1.2-2.3-4.7"></path><path d="M3 11v2a2 2 0 0 0 2 2h1"></path></svg></div>
-                    <h3>CAMPAÑAS PUBLICITARIAS</h3>
-                    <p>Planificamos y difundimos campañas según tu plataforma y tus metas.</p>
-                </article>
-                <article class="feature-card">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M7 15h.01M12 15h.01M17 15h.01M7 9h10"></path></svg></div>
-                    <h3>CONTENIDO CREATIVO</h3>
-                    <p>Piezas y mensajes alineados con la identidad de tu marca.</p>
-                </article>
-                <article class="feature-card">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-4-4M8 11h6M11 8v6"></path></svg></div>
-                    <h3>ALCANCE DE AUDIENCIAS</h3>
-                    <p>Orientamos la difusión hacia el público que querés alcanzar.</p>
-                </article>
-                <article class="feature-card">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"></path><path d="m7 14 4-4 4 3 6-7"></path><path d="M16 6h5v5"></path></svg></div>
-                    <h3>SEGUIMIENTO DE RESULTADOS</h3>
-                    <p>Revisamos el desempeño de las campañas y ajustamos la estrategia.</p>
-                </article>
-                <article class="feature-card">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg></div>
-                    <h3>COMUNICACIÓN DIRECTA</h3>
-                    <p>Coordinamos con vos para mantener cada acción alineada con tu equipo.</p>
-                </article>
-                <article class="feature-card">
-                    <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path><path d="m9 12 2 2 4-4"></path></svg></div>
-                    <h3>ESTRATEGIA A TU MEDIDA</h3>
-                    <p>Una propuesta flexible, pensada para la etapa y necesidades de tu proyecto.</p>
-                </article>
+                <figure class="sb-creative">
+                    <picture>
+                        <img src="BANN.png" alt="Banner de Seven Blue Publicidades para una campaña temática de circo">
+                    </picture>
+                </figure>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA FINAL -->
-    <section class="final-cta">
-        <div class="section-container">
-            <h2>Hagamos crecer tu plataforma</h2>
-            <p class="subtitle">Contanos qué necesitás y armamos una propuesta para tu marca.</p>
-            <button class="btn-primary" onclick="window.open('https://wa.me/5492236049325?text=Hola%2C%20quiero%20una%20propuesta%20de%20publicidad%20para%20mi%20plataforma', '_blank')" style="font-size: 1rem; padding: 15px 45px;">Hablemos</button>
-        </div>
-    </section>
+        <section class="sb-section sb-benefits" aria-labelledby="benefits-title">
+            <div class="sb-container">
+                <div class="sb-section-heading">
+                    <p class="sb-eyebrow">Servicio integral</p>
+                    <h2 id="benefits-title">Llevamos público a tu web de entretenimiento</h2>
+                    <p>Tu plataforma recibe las visitas y las consultas se atienden en su propio chat interno.</p>
+                </div>
+                <div class="sb-benefits-grid">
+                    <article class="sb-benefit">
+                        <div class="sb-benefit-icon" aria-hidden="true">01</div>
+                        <h3>Tráfico directo a tu web</h3>
+                        <p>Dirigimos las campañas a tu sitio de entretenimiento para que las personas conozcan tu propuesta.</p>
+                    </article>
+                    <article class="sb-benefit">
+                        <div class="sb-benefit-icon" aria-hidden="true">02</div>
+                        <h3>Creatividades orientadas a conversión</h3>
+                        <p>Diseñamos piezas y mensajes alineados con tu marca, tus ofertas y los requisitos del mercado.</p>
+                    </article>
+                    <article class="sb-benefit">
+                        <div class="sb-benefit-icon" aria-hidden="true">03</div>
+                        <h3>Gestión preventiva y contingencia</h3>
+                        <p>Monitoreamos las campañas y acordamos pasos de respuesta ante cambios o revisiones de plataforma, respetando sus políticas.</p>
+                    </article>
+                    <article class="sb-benefit">
+                        <div class="sb-benefit-icon" aria-hidden="true">04</div>
+                        <h3>Optimización frecuente del presupuesto</h3>
+                        <p>Revisamos el desempeño y ajustamos la inversión según los datos disponibles y los objetivos acordados.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-    <!-- FOOTER -->
-    <footer>
-        <p>&copy; 2026 Cyber Publicidades | Publicidad para plataformas digitales</p>
+        <section class="sb-section sb-results" id="resultados" aria-labelledby="results-title">
+            <div class="sb-container">
+                <div class="sb-section-heading">
+                    <p class="sb-eyebrow">Seguimiento transparente</p>
+                    <h2 id="results-title">Resultados medidos con datos de campaña</h2>
+                    <p>El rendimiento se evalúa por periodo, mercado y objetivo. No usamos cifras estimadas como si fueran resultados reales.</p>
+                </div>
+                <div class="sb-report">
+                    <p class="sb-report-title">Indicadores que podemos incluir en el reporte</p>
+                    <div class="sb-report-grid">
+                        <div class="sb-report-metric"><strong>Conversaciones en chat interno</strong><span>Contactos iniciados en el chat de tu plataforma durante el periodo.</span></div>
+                        <div class="sb-report-metric"><strong>Costo por conversación</strong><span>Inversión atribuida dividida por consultas registradas en tu chat interno.</span></div>
+                        <div class="sb-report-metric"><strong>Consultas calificadas</strong><span>Contactos evaluados según los criterios acordados con tu equipo.</span></div>
+                    </div>
+                    <p class="sb-report-disclaimer">Las capturas y métricas de casos se incorporan con datos reales, periodo identificable y autorización del cliente.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="sb-section sb-process" id="proceso" aria-labelledby="process-title">
+            <div class="sb-container">
+                <div class="sb-section-heading">
+                    <p class="sb-eyebrow">Proceso de trabajo</p>
+                    <h2 id="process-title">De la estrategia al seguimiento</h2>
+                    <p>Un proceso claro, coordinado con tu equipo y condicionado a la elegibilidad de la cuenta y el mercado.</p>
+                </div>
+                <div class="sb-steps">
+                    <article class="sb-step">
+                        <h3>Analizamos tu plataforma e inversión</h3>
+                        <p>Revisamos objetivos, mercados, presupuesto y la documentación necesaria para evaluar la viabilidad de la pauta.</p>
+                    </article>
+                    <article class="sb-step">
+                        <h3>Preparamos creatividades y estructura</h3>
+                        <p>Definimos mensajes, piezas, audiencias y medición de acuerdo con tu marca y las políticas aplicables.</p>
+                    </article>
+                    <article class="sb-step">
+                        <h3>Lanzamos y optimizamos la campaña</h3>
+                        <p>Con las autorizaciones requeridas, dirigimos las visitas a tu web para que las consultas lleguen al chat interno de tu equipo.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="sb-final-cta" aria-labelledby="contact-title">
+            <div class="sb-container">
+                <h2 id="contact-title">¿Querés pautar tu casino online?</h2>
+                <p>Contanos en qué mercado operás y qué objetivo buscás. Coordinamos una primera conversación con Seven Blue.</p>
+                <a class="sb-button" href="https://wa.me/5492236049325?text=Hola%2C%20quiero%20informaci%C3%B3n%20para%20pautar%20mi%20casino%20online" target="_blank" rel="noopener noreferrer">Solicitar asesoría</a>
+                <p class="sb-compliance-note">Solo para mayores de 18 años. Toda campaña depende de la legislación del mercado y de las autorizaciones exigidas por Meta.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="sb-footer">
+        <p>&copy; 2026 Seven Blue Publicidades. Publicidad digital para operadores habilitados.</p>
+        <p>La disponibilidad de campañas de apuestas online depende de la autorización de Meta y de la normativa vigente en cada jurisdicción.</p>
     </footer>
-
 </body>
 </html>
